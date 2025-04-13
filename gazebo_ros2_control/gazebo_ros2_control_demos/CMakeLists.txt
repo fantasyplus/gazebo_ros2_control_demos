@@ -29,6 +29,13 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}/
 )
 
+
+add_executable(example_ackermann_drive examples/example_ackermann_drive.cpp)
+ament_target_dependencies(example_ackermann_drive
+  rclcpp
+  geometry_msgs
+)
+
 add_executable(example_position examples/example_position.cpp)
 ament_target_dependencies(example_position
   rclcpp
@@ -89,6 +96,7 @@ install(
     example_diff_drive
     example_tricycle_drive
     example_gripper
+    example_ackermann_drive
   DESTINATION
     lib/${PROJECT_NAME}
 )
